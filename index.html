@@ -21,6 +21,12 @@
   .desc { color: #666; margin-left: 16px; }
   .legend span { margin-right: 10px; }
   .unpinned { color: #999; font-size: 12px; margin-left: 16px; }
+  /* 휴대폰: 지도를 위, 목록을 아래로 */
+  @media (max-width: 700px) {
+    body { flex-direction: column-reverse; }
+    #map { flex: none; height: 55vh; }
+    #side { width: 100%; flex: 1; border-right: none; border-top: 1px solid #ddd; }
+  }
 </style>
 </head>
 <body>
