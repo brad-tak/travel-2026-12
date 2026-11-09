@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>랑카위 · 꼬리페 여행 지도 (2026.12.15~19)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Apple SD Gothic Neo", sans-serif; display: flex; height: 100vh; }
+  #side { width: 380px; overflow-y: auto; border-right: 1px solid #ddd; padding: 12px; font-size: 13px; }
+  #map { flex: 1; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 16px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #eee; }
+  .btns button { margin: 0 4px 8px 0; padding: 6px 10px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; }
+  .btns button.on { background: #222; color: #fff; }
+  .item { padding: 6px 4px; border-radius: 4px; }
+  .item.pinned { cursor: pointer; }
+  .item.pinned:hover { background: #f3f3f3; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .desc { color: #666; margin-left: 16px; }
+  .links { margin: 3px 0 0 16px; }
+  .links a { display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 10px; font-size: 12px; text-decoration: none; }
+  .links a.gm { background: #e8f0fe; color: #1a56c4; }
+  .links a.rv { background: #e6f6ea; color: #137333; }
+  .legend span { margin-right: 10px; }
+  .nopin { color: #999; font-size: 11px; }
+  .leaflet-popup-content .links { margin-left: 0; }
+  /* 휴대폰: 지도를 위, 목록을 아래로 */
+  @media (max-width: 700px) {
+    body { flex-direction: column-reverse; }
+    #map { flex: none; height: 50vh; }
+    #side { width: 100%; flex: 1; border-right: none; border-top: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+<div id="side">
+  <h1>🌴 랑카위 · 꼬리페 (12/15~19)</h1>
+  <div class="btns">
+    <button id="b-lgk" class="on">🇲🇾 랑카위</button>
+    <button id="b-lipe">🇹🇭 꼬리페</button>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#d62728"></i>숙소</span>
+    <span><i class="dot" style="background:#1f77b4"></i>가볼곳</span>
+    <span><i class="dot" style="background:#ff7f0e"></i>식당</span>
+    <span><i class="dot" style="background:#7f7f7f"></i>선착장</span>
+  </div>
+  <div id="list"></div>
+</div>
+<div id="map"></div>
+<script>
+const COLORS = { hotel: "#d62728", see: "#1f77b4", eat: "#ff7f0e", ferry: "#7f7f7f" };
+const CAT_LABEL = { hotel: "🏨 숙소", ferry: "⛴️ 선착장", see: "📍 가볼 만한 곳", eat: "🍽️ 식당" };
+
+// 좌표: OpenStreetMap 기준. 해변·섬은 대표 지점. 데이터 원본은 data/*.json (build.py로 주입)
+const PLACES = {
+  lgk: { view: [[6.19, 99.66], [6.47, 99.91]], items: /*LGK*/ },
+  lipe: { view: [[6.475, 99.215], [6.565, 99.325]], items: /*LIPE*/ },
+};
+
+const map = L.map("map");
+// OSM 공식 타일은 file://에서 403, CARTO는 API 키 요구 → 키 없이 되는 Esri 타일 사용
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 19, attribution: "Tiles © Esri"
+}).addTo(map);
+
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const gmapsUrl = (p) => p.lat != null
+  ? `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name.replace(/^.*\(|\).*$/g, "") + (p.region === "lgk" ? " Langkawi" : " Koh Lipe"))}`;
+const linksHtml = (p) =>
+  `<div class="links"><a class="gm" href="${gmapsUrl(p)}" target="_blank">🗺️ 구글맵</a>` +
+  (p.review_url ? `<a class="rv" href="${esc(p.review_url)}" target="_blank">📝 ${esc(p.review_title || "블로그 후기")}</a>` : "") +
+  `</div>`;
+
+for (const [key, region] of Object.entries(PLACES)) {
+  for (const p of region.items) {
+    p.region = key;
+    if (p.lat == null) continue;
+    p.marker = L.circleMarker([p.lat, p.lon], { radius: 8, color: "#fff", weight: 2, fillColor: COLORS[p.cat], fillOpacity: 0.95 })
+      .bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}${linksHtml(p)}`)
+      .addTo(map);
+  }
+}
+
+function show(key) {
+  const region = PLACES[key];
+  document.getElementById("b-lgk").classList.toggle("on", key === "lgk");
+  document.getElementById("b-lipe").classList.toggle("on", key === "lipe");
+  map.fitBounds(region.view);
+  let html = "";
+  for (const cat of ["hotel", "ferry", "see", "eat"]) {
+    const rows = region.items.map((p, i) => [p, i]).filter(([p]) => p.cat === cat);
+    if (!rows.length) continue;
+    html += `<h2>${CAT_LABEL[cat]} (${rows.length})</h2>`;
+    for (const [p, i] of rows) {
+      const pinned = p.lat != null;
+      html += `<div class="item${pinned ? " pinned" : ""}" data-i="${i}"><i class="dot" style="background:${COLORS[cat]}"></i><b>${esc(p.name)}</b>` +
+        (pinned ? "" : ` <span class="nopin">(지도 위치 미확인)</span>`) +
+        `<div class="desc">${esc(p.desc)}</div>${linksHtml(p)}</div>`;
+    }
+  }
+  const list = document.getElementById("list");
+  list.innerHTML = html;
+  list.querySelectorAll(".item.pinned").forEach((el) => el.addEventListener("click", (e) => {
+    if (e.target.closest("a")) return;  // 링크 클릭은 그대로 열기
+    const p = region.items[+el.dataset.i];
+    map.setView(p.marker.getLatLng(), 16);
+    p.marker.openPopup();
+  }));
+}
+
+document.getElementById("b-lgk").onclick = () => show("lgk");
+document.getElementById("b-lipe").onclick = () => show("lipe");
+show("lgk");
+</script>
+</body>
+</html>
