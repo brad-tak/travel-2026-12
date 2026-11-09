@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>랑카위 · 꼬리페 여행 지도 (2026.12.15~19)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Apple SD Gothic Neo", sans-serif; display: flex; height: 100vh; }
+  #side { width: 360px; overflow-y: auto; border-right: 1px solid #ddd; padding: 12px; font-size: 13px; }
+  #map { flex: 1; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 16px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #eee; }
+  .btns button { margin: 0 4px 8px 0; padding: 6px 10px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; }
+  .btns button.on { background: #222; color: #fff; }
+  .item { padding: 6px 4px; cursor: pointer; border-radius: 4px; }
+  .item:hover { background: #f3f3f3; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .desc { color: #666; margin-left: 16px; }
+  .legend span { margin-right: 10px; }
+  .unpinned { color: #999; font-size: 12px; margin-left: 16px; }
+</style>
+</head>
+<body>
+<div id="side">
+  <h1>🌴 랑카위 · 꼬리페 (12/15~19)</h1>
+  <div class="btns">
+    <button id="b-lgk" class="on">🇲🇾 랑카위</button>
+    <button id="b-lipe">🇹🇭 꼬리페</button>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#d62728"></i>숙소</span>
+    <span><i class="dot" style="background:#1f77b4"></i>가볼곳</span>
+    <span><i class="dot" style="background:#ff7f0e"></i>식당</span>
+    <span><i class="dot" style="background:#7f7f7f"></i>선착장</span>
+  </div>
+  <div id="list"></div>
+</div>
+<div id="map"></div>
+<script>
+const COLORS = { hotel: "#d62728", see: "#1f77b4", eat: "#ff7f0e", ferry: "#7f7f7f" };
+const CAT_LABEL = { hotel: "🏨 숙소", ferry: "⛴️ 선착장", see: "📍 가볼 만한 곳", eat: "🍽️ 식당" };
+
+// 좌표: OpenStreetMap 기준. 해변·섬은 대표 지점.
+const PLACES = {
+  lgk: {
+    view: [[6.22, 99.66], [6.47, 99.91]],
+    items: [
+      ["hotel", "The Westin Langkawi Resort & Spa", 6.29962, 99.85522, "12/15~17 숙박. 프라이빗 비치, 키즈풀, 키즈클럽(유료)"],
+      ["ferry", "쿠아 제티 (Kuah Jetty)", 6.30579, 99.84918, "꼬리페행 페리 출발. 웨스틴에서 차로 약 5분. 출국심사 있으니 1시간 30분 전 도착"],
+      ["see", "이글 스퀘어 (Eagle Square)", 6.30835, 99.85196, "랑카위 상징 독수리상. 웨스틴에서 걸어서 갈 수 있음. 저녁 산책 추천"],
+      ["see", "레젠다 파크 (Lagenda Park)", 6.31357, 99.85199, "쿠아 해안 공원. 잔디밭과 조형물이 있어 아이들 뛰어놀기 좋음"],
+      ["see", "킬림 지오포레스트 파크 (맹그로브 투어)", 6.38534, 99.89621, "유네스코 지오파크. 보트로 맹그로브, 독수리 먹이 주기, 박쥐 동굴. 3세 이상 권장 ⭐"],
+      ["see", "랑카위 와일드라이프 파크", 6.38729, 99.86194, "사슴, 원숭이, 타조 먹이 주기. 새장 안을 걷는 코스 ⭐"],
+      ["see", "아일랜드 호핑 (다양 분팅 섬)", 6.23170, 99.80019, "임산부 호수, 독수리 먹이 주기, 해변 수영. 쿠아 제티 쪽에서 출발"],
+      ["see", "탄중 루 비치 (Tanjung Rhu)", 6.45647, 99.82426, "북쪽의 조용한 해변. 물이 얕고 경치가 좋음"],
+      ["see", "스카이캡 & 오리엔탈 빌리지", 6.37132, 99.67179, "케이블카(해발 708m)와 스카이브릿지. 10시 전 도착 추천. 3D 미술관과 공룡 체험도 있음. 웨스틴에서 차로 약 40분"],
+      ["see", "세븐 웰스 폭포 (Telaga Tujuh)", 6.38177, 99.67288, "스카이캡 근처. 계단 수백 개. 성인 RM10, 4~12세 RM5. 원숭이 조심"],
+      ["see", "언더워터 월드", 6.28784, 99.72861, "아쿠아리움, 펭귄관 인기. 판타이 체낭"],
+      ["eat", "웡퐁 해산물 (Weng Fung Seafood)", 6.32248, 99.85186, "쿠아의 오래된 해산물집. 칠리 크랩, 저렴함. 트립어드바이저 4.4"],
+      ["eat", "원더랜드 푸드 스토어 (Wonderland)", 6.32465, 99.84388, "중식 해산물. 버터 새우, 칠리 크랩 ⭐"],
+      ["eat", "테오 해산물 (Teo Seafood)", 6.32581, 99.84304, "리뷰가 많고 맛있고 저렴하다는 평"],
+      ["eat", "쿠아 타운 시푸드 (Kuah Town Seafood)", 6.31745, 99.85058, "현지인이 많이 가는 작은 해산물집"],
+      ["eat", "완 타이 (Wan Thai)", 6.32657, 99.84310, "쿠아의 태국 음식점. 매운 편"],
+      ["eat", "피시 팜 레스토랑 (Fish Farm Restaurant)", 6.30637, 99.86136, "쿠아의 오래된 해산물집. 바다 전망 데크"],
+      ["eat", "오키드 리아 (Orkid Ria Seafood)", 6.29569, 99.72374, "판타이 체낭. Trip.com 4.8. 언더워터 월드 갈 때 같이 들르기 좋음"],
+    ],
+    unpinned: [
+      ["Desa Permata Ikan Bakar", "숯불 생선구이 노포 (쿠아)"],
+      ["Ka Kee Lang Seafood Restaurant Langkawi", "라임 농어찜 추천 (쿠아)"],
+      ["ZF Seafood Restaurant Langkawi", "Trip.com 4.9 (판타이 체낭)"],
+    ],
+  },
+  lipe: {
+    view: [[6.475, 99.255], [6.565, 99.325]],
+    items: [
+      ["hotel", "Akira Lipe Resort (1순위 후보)", 6.48729, 99.30255, "12/17~19 후보. 파타야 비치 쪽. 키즈풀, 무료 키즈클럽"],
+      ["hotel", "Ten Moons Lipe Resort (2순위 후보)", 6.48410, 99.31070, "8세 미만 무료, 소파베드에 아이 2명 가능"],
+      ["ferry", "파타야 비치 입국심사 / 번다야", 6.48563, 99.30553, "랑카위에서 오는 배가 도착하는 곳. 태국 입국심사"],
+      ["see", "파타야 비치", 6.48600, 99.30150, "메인 해변. 모래가 고와 모래성 놀이 좋음"],
+      ["see", "선라이즈 비치", 6.48990, 99.30978, "일출 명소. 물이 얕고 잔잔함"],
+      ["see", "선셋 비치", 6.49222, 99.30046, "일몰 명소. 해변에서 바로 스노클링. 바위 구간 주의 ⭐"],
+      ["see", "워킹 스트리트", 6.48859, 99.30807, "식당과 노점이 모인 거리. 저녁 길거리 음식"],
+      ["see", "꼬아당 (Koh Adang)", 6.54253, 99.30107, "롱테일 보트로 이동. 해변 스노클링, 장비 대여 약 50바트 ⭐"],
+      ["see", "차도 클리프 전망대 (Koh Adang)", 6.51398, 99.31471, "섬 전체가 보이는 전망대. 경사가 가팔라 어린아이에게는 힘듦"],
+      ["see", "꼬힌암 (Koh Hin Ngam)", 6.51387, 99.26140, "줄무늬 검은 돌로 유명. 스노클링 투어 필수 코스. 국립공원 티켓 확인 있음"],
+      ["see", "꼬라위 (Koh Rawi)", 6.56044, 99.22364, "스노클링 투어 점심 장소. 숲 그늘 피크닉"],
+      ["eat", "니 파파야 (Nee Papaya)", 6.48833, 99.30825, "정통 태국 음식. 팟타이, 그린커리, 똠얌 ⭐"],
+      ["eat", "파파야 맘 (Papaya Mom)", 6.48745, 99.30585, "저렴한 태국 음식. 그릴 치킨, 쏨땀, 라이브 음악"],
+      ["eat", "킹 크랩 (King Crab)", 6.48812, 99.30719, "가족 운영. 생선구이, 타이거 새우, 해산물 볶음밥"],
+      ["eat", "라 루나 (La Luna)", 6.48802, 99.30562, "이탈리안. 화덕 피자, 수제 파스타. 아이 메뉴로 좋음"],
+      ["eat", "온 더 락스 (On The Rocks @ Serendipity)", 6.48347, 99.31085, "트립어드바이저 4.6 (약 934개 리뷰). 바다 전망 해산물 ⭐"],
+      ["eat", "텐 문스 레스토랑 (Ten Moons)", 6.48410, 99.31070, "트립어드바이저 4.7. 똠얌 볶음밥 추천"],
+      ["eat", "엘리펀트 (Elephant)", 6.48705, 99.30539, "브런치, 커피, 스무디. 밤에는 라이브 음악"],
+      ["eat", "파올로스 피자 (Paolo's)", 6.48925, 99.30752, "바삭한 이탈리안 피자"],
+      ["eat", "붕룬 (Bung Roon)", 6.48738, 99.30596, "할랄 태국 음식, 해산물"],
+      ["eat", "다야 비치 레스토랑 (Daya)", 6.48726, 99.29866, "어부들이 잡아 온 생선을 바로 요리. 저렴한 해변 식당"],
+    ],
+    unpinned: [
+      ["Ranee Seafood Restaurant Koh Lipe", "현지인 추천 해산물, 트립어드바이저 4.9"],
+      ["The Season By The Cliff Lipe", "일몰 디너, 생선 바비큐, 트립어드바이저 4.8"],
+    ],
+  },
+};
+
+const map = L.map("map");
+// OSM 공식 타일은 file://에서 403, CARTO는 API 키 요구 → 키 없이 되는 Esri 타일 사용
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 19, attribution: "Tiles © Esri"
+}).addTo(map);
+
+const gmaps = (lat, lon) => `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+const gsearch = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+const layers = {};
+
+for (const [key, region] of Object.entries(PLACES)) {
+  layers[key] = L.layerGroup().addTo(map);
+  region.markers = region.items.map(([cat, name, lat, lon, desc]) =>
+    L.circleMarker([lat, lon], { radius: 8, color: "#fff", weight: 2, fillColor: COLORS[cat], fillOpacity: 0.95 })
+      .bindPopup(`<b>${name}</b><br>${desc}<br><a href="${gmaps(lat, lon)}" target="_blank">구글맵에서 열기 ↗</a>`)
+      .addTo(layers[key])
+  );
+}
+
+function show(key) {
+  const region = PLACES[key];
+  document.getElementById("b-lgk").classList.toggle("on", key === "lgk");
+  document.getElementById("b-lipe").classList.toggle("on", key === "lipe");
+  map.fitBounds(region.view);
+  let html = "";
+  for (const cat of ["hotel", "ferry", "see", "eat"]) {
+    const rows = region.items.map((it, i) => [it, i]).filter(([it]) => it[0] === cat);
+    if (!rows.length) continue;
+    html += `<h2>${CAT_LABEL[cat]}</h2>`;
+    for (const [[, name, , , desc], i] of rows) {
+      html += `<div class="item" data-i="${i}"><i class="dot" style="background:${COLORS[cat]}"></i><b>${name}</b><div class="desc">${desc}</div></div>`;
+    }
+  }
+  if (region.unpinned.length) {
+    html += `<h2>📌 지도 위치 미확인 (구글맵 검색)</h2>`;
+    for (const [q, desc] of region.unpinned) {
+      html += `<div class="unpinned"><a href="${gsearch(q)}" target="_blank">${q} ↗</a> · ${desc}</div>`;
+    }
+  }
+  const list = document.getElementById("list");
+  list.innerHTML = html;
+  list.querySelectorAll(".item").forEach(el => el.onclick = () => {
+    const m = region.markers[+el.dataset.i];
+    map.setView(m.getLatLng(), 16);
+    m.openPopup();
+  });
+}
+
+document.getElementById("b-lgk").onclick = () => show("lgk");
+document.getElementById("b-lipe").onclick = () => show("lipe");
+show("lgk");
+</script>
+</body>
+</html>
