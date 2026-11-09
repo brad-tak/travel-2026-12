@@ -1,34 +1,287 @@
 [
-{"cat":"hotel","name":"아키라 리페 리조트 (Akira Lipe) · 1순위","lat":6.48729,"lon":99.30255,"desc":"파타야 비치 중간. 풀액세스룸, 수영장 여러 개, 키즈풀, 무료 키즈클럽. 입국심사장에서 무료 픽업","review_url":"https://blog.naver.com/shytoru/223912571006","review_title":"네이버 블로그 후기 (아이 동반)"},
-{"cat":"hotel","name":"텐문스 리페 리조트 (Ten Moons) · 2순위","lat":6.48410,"lon":99.31070,"desc":"선라이즈 비치 남쪽 끝. 앞바다가 스노클링 명소이고 장비 무료 대여. 8세 미만 무료","review_url":"https://blog.naver.com/jeehee7877/223821374619","review_title":"네이버 블로그 후기"},
-{"cat":"ferry","name":"파타야 비치 입국심사장 / 번다야","lat":6.48563,"lon":99.30553,"desc":"페리에서 롱테일보트로 갈아타고 해변에 내림. 태국 전자입국신고(TDAC) 미리 작성","review_url":"https://blog.naver.com/yo_vamos/224332245007","review_title":"네이버 블로그 후기 (가족 4인)"},
-{"cat":"see","name":"파타야 비치 (Pattaya Beach)","lat":6.48600,"lon":99.30150,"desc":"섬의 관문 해변. 물이 잔잔하고 워킹 스트리트와 바로 이어짐","review_url":"https://blog.naver.com/johntwok/222985252697","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"선라이즈 비치 (Sunrise Beach)","lat":6.48990,"lon":99.30978,"desc":"일출 명소. 카약 대여 가능, 얕은 산호 지대에서 니모를 볼 수 있음","review_url":"https://blog.naver.com/chaewonyo/224104070009","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"선셋 비치 (Sunset Beach)","lat":6.49222,"lon":99.30046,"desc":"분홍빛 노을 명소. 해 지기 30분 전 도착 추천, 바위 구간 주의 ⭐","review_url":"https://blog.naver.com/onemonth_1212/224288378528","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"노스포인트 비치 (North Point Beach)","lat":6.49550,"lon":99.30576,"desc":"북쪽 끝의 한적한 해변. 꼬아당 뷰, 노을이 선셋 비치보다 낫다는 평도 있음. 툭툭으로 이동","review_url":"https://blog.naver.com/kksy412/223343397499","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"워킹 스트리트 (Walking Street)","lat":6.48859,"lon":99.30807,"desc":"식당, 마사지, 세븐일레븐, 투어사가 모인 중심 거리. 차가 없어 아이와 걷기 편함","review_url":"https://blog.naver.com/shytoru/223858025346","review_title":"네이버 블로그 후기 (아이 동반)"},
-{"cat":"see","name":"꼬끄라 (Koh Kra) · 카약","lat":6.49334,"lon":99.31292,"desc":"선라이즈 비치 앞 작은 섬. 카약으로 약 10분, 주변 산호 스노클링. 아이 첫 카약 코스 ⭐","review_url":"https://blog.naver.com/msblackbean/223386046785","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"꼬우센 (Koh Usen) · 카약","lat":6.48461,"lon":99.31334,"desc":"카약 초보 코스. 얕아서 스노클링하기 좋음. 산호를 밟지 않게 아쿠아슈즈 착용","review_url":"https://blog.naver.com/smartenplus/224244609987","review_title":"네이버 블로그 (여행사 카약 가이드)"},
-{"cat":"see","name":"꼬아당 (Koh Adang)","lat":6.54253,"lon":99.30107,"desc":"국립공원 섬. 한적한 해변, 해변 스노클링. 롱테일 보트로 금방 감 ⭐","review_url":"https://blog.naver.com/smartenplus/224245610112","review_title":"네이버 블로그 (여행사)"},
-{"cat":"see","name":"차도 클리프 전망대 (Chado Cliff)","lat":6.51398,"lon":99.31471,"desc":"가파른 트레킹. 15분이면 첫 뷰포인트에 닿으니 아이와는 거기까지만. 아침 일찍, 물 필수","review_url":"https://blog.naver.com/syls65/224213915454","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"꼬힌암 (Koh Hin Ngam)","lat":6.51387,"lon":99.26140,"desc":"검은 조약돌 섬. 수영보다 구경하러 가는 곳이고 돌은 가져가면 안 됨. 스노클링 투어 단골 코스","review_url":"https://blog.naver.com/viadelapaz/224424047130","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"꼬라위 (Koh Rawi)","lat":6.56044,"lon":99.22364,"desc":"스노클링 투어 점심 휴식 섬. 하얀 모래 해변","review_url":"https://blog.naver.com/y1217jm/221410971968","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"파파야 맘 (Papaya Mom)","lat":6.48745,"lon":99.30585,"desc":"한국인에게 유명한 로컬 맛집. 해산물을 골라 구워 먹음. 09:00~21:30, 저녁엔 대기가 있으니 일찍 ⭐","review_url":"https://blog.naver.com/shytoru/223860219203","review_title":"네이버 블로그 후기 (아이 동반)"},
-{"cat":"eat","name":"니 파파야 (Nee Papaya)","lat":6.48833,"lon":99.30825,"desc":"태국 음식, 해산물 BBQ. 쏨땀, 생선구이. 홍도미 BBQ 약 470바트","review_url":"https://blog.naver.com/chaewonyo/224116958990","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"킹 크랩 (King Crab)","lat":6.48812,"lon":99.30719,"desc":"해산물과 고기를 무게로 달아 구워 주는 BBQ집. 저렴한 편","review_url":"https://blog.naver.com/turtlecouple/220309985810","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"라 루나 (La Luna)","lat":6.48802,"lon":99.30562,"desc":"이탈리안. 파스타가 섬에서 제일 맛있다는 평. 태국 음식이 안 맞는 아이에게 좋음","review_url":"https://blog.naver.com/msr_0912/223734873960","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"엘리펀트 (Elephant)","lat":6.48705,"lon":99.30539,"desc":"브런치 카페 겸 레스토랑. 버거, 피자, 포케, 키즈 파스타","review_url":"https://blog.naver.com/herohwangsae/224073436577","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"파올로스 피자 (Paolo's)","lat":6.48925,"lon":99.30752,"desc":"줄 서서 먹는 화덕피자. 마르게리타 약 100바트부터, 09:00~23:00","review_url":"https://blog.naver.com/gredilie/223743879396","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"온 더 락스 (On The Rocks)","lat":6.48347,"lon":99.31085,"desc":"세렌디피티 리조트 절벽 위 바다 뷰 레스토랑. 텐문스 바로 옆, 가격대 높음","review_url":"https://blog.naver.com/happyoda17/224316625721","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"텐문스 레스토랑 (Ten Moons)","lat":6.48425,"lon":99.31055,"desc":"오션뷰 지중해·서양식. 07:30~22:00","review_url":"https://blog.naver.com/nana_lifestyle/223770350468","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"붕룬 (Bung Roon)","lat":6.48738,"lon":99.30596,"desc":"할랄 해산물 BBQ. 새우, 오징어, 생선구이","review_url":"https://blog.naver.com/yimji44/221251680998","review_title":"네이버 블로그 (일부 언급)"},
-{"cat":"eat","name":"다야 레스토랑 (Daya)","lat":6.48726,"lon":99.29866,"desc":"파타야 비치의 다야 리조트 식당. 로띠 맛집","review_url":"https://blog.naver.com/ataw2012/222297531821","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"타이 레이디 팬케이크 (Thai Lady Pancake)","lat":6.48663,"lon":99.30458,"desc":"두껍고 촉촉한 바나나·누텔라 로띠. 간식으로 좋음 (좌표는 2호점)","review_url":"https://blog.naver.com/gredilie/223791929293","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"블룸 카페 (Bloom Cafe)","lat":6.48771,"lon":99.30640,"desc":"07:30부터 조식. 아침 일찍 움직이는 날에 좋음","review_url":"https://blog.naver.com/love386600/223773936547","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"카페 리페 (Cafe Lipe)","lat":6.48679,"lon":99.30365,"desc":"정원형 카페. 조식 세트, 과일 셰이크. 도착 직후 쉬어 가기 좋음","review_url":"https://blog.naver.com/soo402473/221414801831","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"라니 시푸드 (Ranee Seafood)","lat":null,"lon":null,"desc":"가성비 로컬. 팟타이가 섬 최고라는 평. 11:00~22:00","review_url":"https://blog.naver.com/miaaa_r/223600592470","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"더 시즌 바이 더 클리프 (The Season By The Cliff)","lat":null,"lon":null,"desc":"서쪽 절벽 레스토랑. 노을 뷰, 로띠 칭찬이 많음","review_url":"https://blog.naver.com/csjkht/224469997192","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"타이덤 (Thaidurm)","lat":null,"lon":null,"desc":"한국인 후기가 많은 집. 푸팟퐁커리, 팟타이, 과일 스무디","review_url":"https://blog.naver.com/kksy412/223363728964","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"모조 카페 (Mojo Cafe)","lat":null,"lon":null,"desc":"커피가 맛있는 브런치 카페. 샌드위치, 샐러드","review_url":"https://blog.naver.com/chaewonyo/224094447817","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"코코넛 풀빵 노점 (세븐일레븐 앞)","lat":null,"lon":null,"desc":"한 개 10바트. 아이 간식으로 강추","review_url":"https://blog.naver.com/chaewonyo/224075095065","review_title":"네이버 블로그 후기"}
+ {
+  "cat": "hotel",
+  "name": "아키라 리페 리조트 (Akira Lipe)",
+  "lat": 6.48729,
+  "lon": 99.30255,
+  "desc": "12/17~19 숙박. 파타야 비치 중간, 배 내리는 곳과 가까움. 키즈풀, 키즈클럽, 놀이터. 짐 운반은 미리 요청",
+  "review_url": "https://blog.naver.com/shytoru/223912571006",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "ferry",
+  "name": "파타야 비치 입국심사장 / 번다야",
+  "lat": 6.48563,
+  "lon": 99.30553,
+  "desc": "페리에서 롱테일보트로 갈아타고 해변에 내림. 태국 전자입국신고(TDAC) 미리 작성",
+  "review_url": "https://blog.naver.com/yo_vamos/224332245007",
+  "review_title": "네이버 블로그 후기 (가족 4인)"
+ },
+ {
+  "cat": "see",
+  "name": "파타야 비치 (Pattaya Beach)",
+  "lat": 6.486,
+  "lon": 99.3015,
+  "desc": "섬의 관문 해변. 물이 잔잔하고 워킹 스트리트와 바로 이어짐",
+  "review_url": "https://blog.naver.com/johntwok/222985252697",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "선라이즈 비치 (Sunrise Beach)",
+  "lat": 6.4899,
+  "lon": 99.30978,
+  "desc": "일출 명소. 카약 대여 가능, 얕은 산호 지대에서 니모를 볼 수 있음",
+  "review_url": "https://blog.naver.com/chaewonyo/224104070009",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "선셋 비치 (Sunset Beach)",
+  "lat": 6.49222,
+  "lon": 99.30046,
+  "desc": "분홍빛 노을 명소. 해 지기 30분 전 도착 추천, 바위 구간 주의 ⭐",
+  "review_url": "https://blog.naver.com/onemonth_1212/224288378528",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "노스포인트 비치 (North Point Beach)",
+  "lat": 6.4955,
+  "lon": 99.30576,
+  "desc": "북쪽 끝의 한적한 해변. 꼬아당 뷰, 노을이 선셋 비치보다 낫다는 평도 있음. 툭툭으로 이동",
+  "review_url": "https://blog.naver.com/kksy412/223343397499",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "워킹 스트리트 (Walking Street)",
+  "lat": 6.48859,
+  "lon": 99.30807,
+  "desc": "식당, 마사지, 세븐일레븐, 투어사가 모인 중심 거리. 차가 없어 아이와 걷기 편함",
+  "review_url": "https://blog.naver.com/shytoru/223858025346",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "see",
+  "name": "꼬끄라 (Koh Kra) · 카약",
+  "lat": 6.49334,
+  "lon": 99.31292,
+  "desc": "선라이즈 비치 앞 작은 섬. 카약으로 약 10분, 주변 산호 스노클링. 아이 첫 카약 코스 ⭐",
+  "review_url": "https://blog.naver.com/msblackbean/223386046785",
+  "review_title": "네이버 블로그 후기",
+  "transport": "🛶 선라이즈 비치에서 카약 약 10분"
+ },
+ {
+  "cat": "see",
+  "name": "꼬우센 (Koh Usen) · 카약",
+  "lat": 6.48461,
+  "lon": 99.31334,
+  "desc": "카약 초보 코스. 얕아서 스노클링하기 좋음. 산호를 밟지 않게 아쿠아슈즈 착용",
+  "review_url": "https://blog.naver.com/smartenplus/224244609987",
+  "review_title": "네이버 블로그 (여행사 카약 가이드)",
+  "transport": "🛶 선라이즈 비치에서 카약"
+ },
+ {
+  "cat": "see",
+  "name": "꼬아당 (Koh Adang)",
+  "lat": 6.54253,
+  "lon": 99.30107,
+  "desc": "국립공원 섬. 한적한 해변, 해변 스노클링. 롱테일 보트로 금방 감 ⭐",
+  "review_url": "https://blog.naver.com/smartenplus/224245610112",
+  "review_title": "네이버 블로그 (여행사)",
+  "transport": "🚤 롱테일 보트"
+ },
+ {
+  "cat": "see",
+  "name": "차도 클리프 전망대 (Chado Cliff)",
+  "lat": 6.51398,
+  "lon": 99.31471,
+  "desc": "가파른 트레킹. 15분이면 첫 뷰포인트에 닿으니 아이와는 거기까지만. 아침 일찍, 물 필수",
+  "review_url": "https://blog.naver.com/syls65/224213915454",
+  "review_title": "네이버 블로그 후기",
+  "transport": "🚤 롱테일 보트로 꼬아당 이동 후 트레킹"
+ },
+ {
+  "cat": "see",
+  "name": "꼬힌암 (Koh Hin Ngam)",
+  "lat": 6.51387,
+  "lon": 99.2614,
+  "desc": "검은 조약돌 섬. 수영보다 구경하러 가는 곳이고 돌은 가져가면 안 됨. 스노클링 투어 단골 코스",
+  "review_url": "https://blog.naver.com/viadelapaz/224424047130",
+  "review_title": "네이버 블로그 후기",
+  "transport": "🚤 스노클링 투어(롱테일 보트)"
+ },
+ {
+  "cat": "see",
+  "name": "꼬라위 (Koh Rawi)",
+  "lat": 6.56044,
+  "lon": 99.22364,
+  "desc": "스노클링 투어 점심 휴식 섬. 하얀 모래 해변",
+  "review_url": "https://blog.naver.com/y1217jm/221410971968",
+  "review_title": "네이버 블로그 후기",
+  "transport": "🚤 스노클링 투어(롱테일 보트)"
+ },
+ {
+  "cat": "eat",
+  "name": "파파야 맘 (Papaya Mom)",
+  "lat": 6.48745,
+  "lon": 99.30585,
+  "desc": "한국인에게 유명한 로컬 맛집. 해산물을 골라 구워 먹음. 09:00~21:30, 저녁엔 대기가 있으니 일찍 ⭐",
+  "review_url": "https://blog.naver.com/shytoru/223860219203",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "eat",
+  "name": "니 파파야 (Nee Papaya)",
+  "lat": 6.48833,
+  "lon": 99.30825,
+  "desc": "태국 음식, 해산물 BBQ. 쏨땀, 생선구이. 홍도미 BBQ 약 470바트",
+  "review_url": "https://blog.naver.com/chaewonyo/224116958990",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "킹 크랩 (King Crab)",
+  "lat": 6.48812,
+  "lon": 99.30719,
+  "desc": "해산물과 고기를 무게로 달아 구워 주는 BBQ집. 저렴한 편",
+  "review_url": "https://blog.naver.com/turtlecouple/220309985810",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "라 루나 (La Luna)",
+  "lat": 6.48802,
+  "lon": 99.30562,
+  "desc": "이탈리안. 파스타가 섬에서 제일 맛있다는 평. 태국 음식이 안 맞는 아이에게 좋음",
+  "review_url": "https://blog.naver.com/msr_0912/223734873960",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "엘리펀트 (Elephant)",
+  "lat": 6.48705,
+  "lon": 99.30539,
+  "desc": "브런치 카페 겸 레스토랑. 버거, 피자, 포케, 키즈 파스타",
+  "review_url": "https://blog.naver.com/herohwangsae/224073436577",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "파올로스 피자 (Paolo's)",
+  "lat": 6.48925,
+  "lon": 99.30752,
+  "desc": "줄 서서 먹는 화덕피자. 마르게리타 약 100바트부터, 09:00~23:00",
+  "review_url": "https://blog.naver.com/gredilie/223743879396",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "온 더 락스 (On The Rocks)",
+  "lat": 6.48347,
+  "lon": 99.31085,
+  "desc": "세렌디피티 리조트 절벽 위 바다 뷰 레스토랑. 텐문스 바로 옆, 가격대 높음",
+  "review_url": "https://blog.naver.com/happyoda17/224316625721",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "텐문스 레스토랑 (Ten Moons)",
+  "lat": 6.48425,
+  "lon": 99.31055,
+  "desc": "오션뷰 지중해·서양식. 07:30~22:00",
+  "review_url": "https://blog.naver.com/nana_lifestyle/223770350468",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "붕룬 (Bung Roon)",
+  "lat": 6.48738,
+  "lon": 99.30596,
+  "desc": "할랄 해산물 BBQ. 새우, 오징어, 생선구이",
+  "review_url": "https://blog.naver.com/yimji44/221251680998",
+  "review_title": "네이버 블로그 (일부 언급)"
+ },
+ {
+  "cat": "eat",
+  "name": "다야 레스토랑 (Daya)",
+  "lat": 6.48726,
+  "lon": 99.29866,
+  "desc": "파타야 비치의 다야 리조트 식당. 로띠 맛집",
+  "review_url": "https://blog.naver.com/ataw2012/222297531821",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "타이 레이디 팬케이크 (Thai Lady Pancake)",
+  "lat": 6.48663,
+  "lon": 99.30458,
+  "desc": "두껍고 촉촉한 바나나·누텔라 로띠. 간식으로 좋음 (좌표는 2호점)",
+  "review_url": "https://blog.naver.com/gredilie/223791929293",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "블룸 카페 (Bloom Cafe)",
+  "lat": 6.48771,
+  "lon": 99.3064,
+  "desc": "07:30부터 조식. 아침 일찍 움직이는 날에 좋음",
+  "review_url": "https://blog.naver.com/love386600/223773936547",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "카페 리페 (Cafe Lipe)",
+  "lat": 6.48679,
+  "lon": 99.30365,
+  "desc": "정원형 카페. 조식 세트, 과일 셰이크. 도착 직후 쉬어 가기 좋음",
+  "review_url": "https://blog.naver.com/soo402473/221414801831",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "라니 시푸드 (Ranee Seafood)",
+  "lat": null,
+  "lon": null,
+  "desc": "가성비 로컬. 팟타이가 섬 최고라는 평. 11:00~22:00",
+  "review_url": "https://blog.naver.com/miaaa_r/223600592470",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "더 시즌 바이 더 클리프 (The Season By The Cliff)",
+  "lat": null,
+  "lon": null,
+  "desc": "서쪽 절벽 레스토랑. 노을 뷰, 로띠 칭찬이 많음",
+  "review_url": "https://blog.naver.com/csjkht/224469997192",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "타이덤 (Thaidurm)",
+  "lat": null,
+  "lon": null,
+  "desc": "한국인 후기가 많은 집. 푸팟퐁커리, 팟타이, 과일 스무디",
+  "review_url": "https://blog.naver.com/kksy412/223363728964",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "모조 카페 (Mojo Cafe)",
+  "lat": null,
+  "lon": null,
+  "desc": "커피가 맛있는 브런치 카페. 샌드위치, 샐러드",
+  "review_url": "https://blog.naver.com/chaewonyo/224094447817",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "코코넛 풀빵 노점 (세븐일레븐 앞)",
+  "lat": null,
+  "lon": null,
+  "desc": "한 개 10바트. 아이 간식으로 강추",
+  "review_url": "https://blog.naver.com/chaewonyo/224075095065",
+  "review_title": "네이버 블로그 후기"
+ }
 ]

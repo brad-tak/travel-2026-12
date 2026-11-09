@@ -24,6 +24,9 @@
   .links a { display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 10px; font-size: 12px; text-decoration: none; }
   .links a.gm { background: #e8f0fe; color: #1a56c4; }
   .links a.rv { background: #e6f6ea; color: #137333; }
+  .links a.dir { background: #fff4e5; color: #b45309; }
+  .travel { margin: 3px 0 0 16px; color: #333; font-size: 12px; font-weight: 600; }
+  .leaflet-popup-content .travel { margin: 6px 0 0; }
   .legend span { margin-right: 10px; }
   .nopin { color: #999; font-size: 11px; }
   .leaflet-popup-content .links { margin-left: 0; }
@@ -72,17 +75,46 @@ const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">"
 const gmapsUrl = (p) => p.lat != null
   ? `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}`
   : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name.replace(/^.*\(|\).*$/g, "") + (p.region === "lgk" ? " Langkawi" : " Koh Lipe"))}`;
+const WALK_MAX_MIN = 30;  // 이보다 오래 걸으면 차 이용 권장
+const mins = (s) => Math.max(1, Math.round(s / 60));
+const fmtMin = (m) => m >= 60 ? `${Math.floor(m / 60)}시간${m % 60 ? ` ${m % 60}분` : ""}` : `${m}분`;
+const fmtKm = (m) => m < 1000 ? `${m}m` : `${(m / 1000).toFixed(1)}km`;
+const walkable = (p) => p.routes?.foot && mins(p.routes.foot.s) <= WALK_MAX_MIN;
+
+// 숙소 → 장소 이동 시간 (build.py가 OSM 경로로 미리 계산)
+function travelHtml(p) {
+  if (p.cat === "hotel") return "";
+  if (p.transport) return `<div class="travel">${esc(p.transport)}</div>`;
+  if (!p.routes) return "";
+  const { foot, car } = p.routes;
+  const parts = [];
+  const approx = foot?.est ? "약 " : "";
+  const hideFoot = car && mins(foot?.s ?? 0) > 60;  // 걸어갈 거리가 아니면 차만 표시
+  if (foot && !hideFoot) parts.push(`🚶 도보 ${approx}${fmtMin(mins(foot.s))} (${approx}${fmtKm(foot.m)})` + (car && !walkable(p) ? " · 차 권장" : ""));
+  if (car) parts.push(`🚗 차 ${fmtMin(mins(car.s))}`);
+  return parts.length ? `<div class="travel">${parts.join("  ·  ")}</div>` : "";
+}
+
+function dirUrl(p) {
+  const hotel = PLACES[p.region].hotel;
+  const dest = gmapsUrl(p).split("query=")[1];  // 좌표 또는 이미 인코딩된 장소 이름
+  const mode = p.region === "lipe" || walkable(p) ? "walking" : "driving";
+  return `https://www.google.com/maps/dir/?api=1&origin=${hotel.lat},${hotel.lon}&destination=${dest}&travelmode=${mode}`;
+}
+
 const linksHtml = (p) =>
   `<div class="links"><a class="gm" href="${gmapsUrl(p)}" target="_blank">🗺️ 구글맵</a>` +
+  (p.cat !== "hotel" && !p.transport ? `<a class="dir" href="${dirUrl(p)}" target="_blank">🧭 숙소에서 길찾기</a>` : "") +
   (p.review_url ? `<a class="rv" href="${esc(p.review_url)}" target="_blank">📝 ${esc(p.review_title || "블로그 후기")}</a>` : "") +
   `</div>`;
 
 for (const [key, region] of Object.entries(PLACES)) {
+  region.hotel = region.items.find((p) => p.cat === "hotel");
+  for (const p of region.items) p.region = key;
   for (const p of region.items) {
-    p.region = key;
     if (p.lat == null) continue;
-    p.marker = L.circleMarker([p.lat, p.lon], { radius: 8, color: "#fff", weight: 2, fillColor: COLORS[p.cat], fillOpacity: 0.95 })
-      .bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}${linksHtml(p)}`)
+    p.marker = L.circleMarker([p.lat, p.lon], { radius: p.cat === "hotel" ? 11 : 8, color: "#fff", weight: 2, fillColor: COLORS[p.cat], fillOpacity: 0.95 })
+      .bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}${travelHtml(p)}${linksHtml(p)}`)
       .addTo(map);
   }
 }
@@ -101,7 +133,7 @@ function show(key) {
       const pinned = p.lat != null;
       html += `<div class="item${pinned ? " pinned" : ""}" data-i="${i}"><i class="dot" style="background:${COLORS[cat]}"></i><b>${esc(p.name)}</b>` +
         (pinned ? "" : ` <span class="nopin">(지도 위치 미확인)</span>`) +
-        `<div class="desc">${esc(p.desc)}</div>${linksHtml(p)}</div>`;
+        `<div class="desc">${esc(p.desc)}</div>${travelHtml(p)}${linksHtml(p)}</div>`;
     }
   }
   const list = document.getElementById("list");
