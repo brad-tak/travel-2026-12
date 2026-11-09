@@ -62,10 +62,11 @@ const PLACES = {
 };
 
 const map = L.map("map");
-// OSM 공식 타일은 file://에서 403, CARTO는 API 키 요구 → 키 없이 되는 Esri 타일 사용
-L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-  maxZoom: 19, attribution: "Tiles © Esri"
-}).addTo(map);
+// OSM 공식 타일은 file://에서 403, CARTO는 API 키 요구 → 키 없이 되는 Esri 평면(음영 없는) 지도 + 영문 라벨
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
+L.tileLayer(ESRI + "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, attribution: "Tiles © Esri" }).addTo(map);
+L.tileLayer(ESRI + "World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16 }).addTo(map);
+map.setMaxZoom(16);
 
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const gmapsUrl = (p) => p.lat != null
