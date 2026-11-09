@@ -1,31 +1,245 @@
 [
-{"cat":"hotel","name":"더 웨스틴 랑카위 리조트 & 스파 (The Westin Langkawi)","lat":6.29962,"lon":99.85522,"desc":"12/15~17 숙박. 프라이빗 비치, 수영장 4개, 키즈풀, 키즈클럽(유료)","review_url":"https://blog.naver.com/448686/223984623833","review_title":"네이버 블로그 후기"},
-{"cat":"ferry","name":"쿠아 제티 (Kuah Jetty)","lat":6.30579,"lon":99.84918,"desc":"12/17 꼬리페행 페리 출발. 웨스틴에서 차로 약 5분. 출국심사 있으니 1시간 30분 전 도착","review_url":"https://blog.naver.com/jellynezip/224441225963","review_title":"네이버 블로그 후기 (꼬리페 페리)"},
-{"cat":"see","name":"이글 스퀘어 (Eagle Square)","lat":6.30842,"lon":99.85193,"desc":"랑카위 상징 독수리상. 무료, 웨스틴에서 도보 가능. 저녁 산책 추천","review_url":"https://blog.naver.com/vigor8285/224420946213","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"레젠다 파크 (Lagenda Park)","lat":6.31544,"lon":99.85353,"desc":"이글 스퀘어 옆 무료 해변 공원. 아이들과 산책하기 좋음","review_url":"https://blog.naver.com/sinw1014/223888971081","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"쿠아 타운 야시장 (Kuah Night Market) · 수·토","lat":6.32018,"lon":99.85135,"desc":"🗓️ 12/16(수) 저녁에 열림! 섬 최대 야시장. 현금 준비 ⭐","review_url":"https://blog.naver.com/daily_haya/224363224940","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"크다왕 야시장 (Kedawang Night Market) · 화","lat":6.32969,"lon":99.73704,"desc":"🗓️ 12/15(화) 저녁에 열림. 체낭·공항 근처, 작지만 알참","review_url":"https://blog.naver.com/g_luxury_tour/224340595005","review_title":"네이버 블로그 (요일별 야시장 정리)"},
-{"cat":"see","name":"킬림 지오포레스트 맹그로브 투어 (Kilim Geoforest)","lat":6.405,"lon":99.85843,"desc":"보트로 독수리, 박쥐동굴, 원숭이 구경. 아이 동반이면 프라이빗 보트 추천. 박쥐동굴 입장료 별도 ⭐","review_url":"https://blog.naver.com/bah0624/224383477050","review_title":"네이버 블로그 후기 (아이 동반)"},
-{"cat":"see","name":"랑카위 와일드라이프 파크 (Wildlife Park)","lat":6.38729,"lon":99.86194,"desc":"동물 먹이 주기 체험. 성인 RM60, 아동 RM40, 먹이 RM9. 대부분 지붕 있음 ⭐","review_url":"https://blog.naver.com/eunha1310/223794797773","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"아일랜드 호핑 / 다양 분팅 임산부 호수","lat":6.20654,"lon":99.78627,"desc":"호수 수영, 독수리 먹이 주기, 해변 휴식을 묶은 반나절 투어. 호수에서는 구명조끼 필수","review_url":"https://blog.naver.com/cbchin/224187929309","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"스플래시 아웃 워터파크 (Splash Out)","lat":6.32256,"lon":99.84547,"desc":"쿠아 근처 가성비 워터파크. 10:00~18:00, 성인 약 RM80, 아동 약 RM60","review_url":"https://blog.naver.com/yo_vamos/224319855070","review_title":"네이버 블로그 후기 (아이 둘)"},
-{"cat":"see","name":"랑카위 퍼레이드 메가몰 (키즈카페·면세)","lat":6.32724,"lon":99.83822,"desc":"실내 키즈카페 1인 RM9(양말 포함). 몰 안 Teow Soon Huat 면세점에서 초콜릿, 술 구매 가능","review_url":"https://blog.naver.com/nana9j_/224421753359","review_title":"네이버 블로그 후기 (키즈카페)"},
-{"cat":"see","name":"탄중 루 비치 (Tanjung Rhu)","lat":6.45853,"lon":99.82585,"desc":"북쪽의 한적한 고운 모래 해변. 물이 잔잔해 아이 물놀이에 좋음","review_url":"https://blog.naver.com/paleblue818/224371384844","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"스카이캡 & 오리엔탈 빌리지 (SkyCab)","lat":6.37092,"lon":99.67136,"desc":"케이블카와 스카이브릿지. 3D 미술관 등 아이 시설이 있음. 오전 방문 추천, 웨스틴에서 차로 약 40분","review_url":"https://blog.naver.com/joonsfamily1/224103528668","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"세븐 웰스 폭포 (Telaga Tujuh)","lat":6.38177,"lon":99.67288,"desc":"위쪽 천연 미끄럼틀이 아이들에게 인기. 계단이 많으니 아쿠아슈즈 준비, 원숭이 조심","review_url":"https://blog.naver.com/onemonth_1212/224262208425","review_title":"네이버 블로그 후기"},
-{"cat":"see","name":"판타이 체낭 비치 (Pantai Cenang)","lat":6.29536,"lon":99.72334,"desc":"일몰, 불쇼, 면세점이 모인 번화가 해변. 언더워터 월드와 묶어서 가기 좋음","review_url":"https://blog.naver.com/bah0624/224411344859","review_title":"네이버 블로그 후기 (아이 동반)"},
-{"cat":"see","name":"언더워터 월드 (Underwater World)","lat":6.28783,"lon":99.72862,"desc":"터널 수조와 펭귄관. 실내라 비 오는 날 좋음. 대략 10:00~18:00","review_url":"https://blog.naver.com/bver-/224443095276","review_title":"네이버 블로그 후기 (아기 동반)"},
-{"cat":"eat","name":"원더랜드 푸드 스토어 (Wonderland)","lat":6.32465,"lon":99.84388,"desc":"쿠아 현지인 해산물 맛집, 양이 푸짐함. 17:30~22:30, 저녁에 붐빔 ⭐","review_url":"https://blog.naver.com/nana9j_/224372881642","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"웡퐁 해산물 (Weng Fung Seafood)","lat":6.32248,"lon":99.85186,"desc":"쿠아의 오래된 중식 해산물집. 라라(조개) 요리, 칠리 크랩. 11:30~15:30, 18:00~22:30","review_url":"https://www.heritageonaplate.com/blog/things-to-do-langkawi-best-seafood-restaurant-dinner","review_title":"영문 블로그"},
-{"cat":"eat","name":"피시 팜 레스토랑 (Fish Farm Restaurant)","lat":6.30637,"lon":99.86136,"desc":"웨스틴 근처 바닷가 대형 해산물집. 수조에서 직접 고르고 일몰이 예쁨","review_url":"https://blog.naver.com/jessyjeon/224119984797","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"테오 해산물 (Teo Seafood)","lat":6.32581,"lon":99.84304,"desc":"야외 테이블 중식 해산물집. 새우가 신선하고 가성비 좋음","review_url":"https://cavinteo.blogspot.com/2019/01/restoran-teo-seafood-restaurant-kuah-langkawi.html","review_title":"영문 블로그"},
-{"cat":"eat","name":"쿠아 타운 시푸드 (Kuah Town Seafood)","lat":6.31745,"lon":99.85058,"desc":"깔끔한 중식 해산물집. 모닝글로리 볶음이 맛있다는 평","review_url":"https://blog.naver.com/saltely/224165731761","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"완 타이 (Wan Thai)","lat":6.32657,"lon":99.8431,"desc":"똠얌꿍, 코코넛 그린커리. 현금만 받고 주류 없음","review_url":"https://heartofsheep.wordpress.com/2018/05/22/wan-thai-kuah-langkawi/","review_title":"영문 블로그"},
-{"cat":"eat","name":"아얌 그푹 팍 라든 (Ayam Gepuk Pak Raden)","lat":6.32031,"lon":99.84959,"desc":"말레이 로컬 식당. 치킨, 오징어튀김이 저렴하고 맛있음 (좌표는 도로 기준)","review_url":"https://blog.naver.com/cometome07/224241099063","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"코비디엠 카페 (Co B Diem)","lat":6.32269,"lon":99.85226,"desc":"쿠아의 브런치 카페. 좌석이 넓어 아이 동반 편함. 오후까지만 영업","review_url":"https://blog.naver.com/sinw1014/223880067591","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"카키랑 해산물 (Ka Kee Lang)","lat":6.32678,"lon":99.8401,"desc":"광둥식 해산물집, 라임 농어찜 추천 (좌표는 도로 기준)","review_url":null,"review_title":null},
-{"cat":"eat","name":"오키드 리아 (Orkid Ria, 체낭)","lat":6.29569,"lon":99.72374,"desc":"체낭의 유명 해산물집. 타이거 새우, 크랩. 체낭 가는 날 저녁으로 좋음","review_url":"https://blog.naver.com/apgjdglgl5/223957370754","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"데사 퍼마타 이칸 바카르 (Desa Permata)","lat":null,"lon":null,"desc":"말레이식 생선구이 노점. 마리당 가격, 이칸 로반 바카르 인기","review_url":"https://wahdah.my/blog/best-places-to-eat-in-langkawi-breakfast-lunch-and-dinner","review_title":"영문 블로그 (맛집 리스트)"},
-{"cat":"eat","name":"앤 사테 (Ann Satay)","lat":null,"lon":null,"desc":"현지인 사테 맛집. 숯불 꼬치에 땅콩소스, 아이들도 잘 먹음","review_url":"https://blog.naver.com/cometome07/224242248134","review_title":"네이버 블로그 후기"},
-{"cat":"eat","name":"ZF 해산물 (ZF Seafood, 판타이 텡아)","lat":null,"lon":null,"desc":"광둥식, 크림 타이거 새우 인기. 이전했다는 말이 있으니 위치 확인 필요","review_url":null,"review_title":null}
+ {
+  "cat": "hotel",
+  "name": "더 웨스틴 랑카위 리조트 & 스파 (The Westin Langkawi)",
+  "lat": 6.29962,
+  "lon": 99.85522,
+  "desc": "12/15~17 숙박. 프라이빗 비치, 수영장 4개, 키즈풀, 키즈클럽(유료)",
+  "review_url": "https://blog.naver.com/448686/223984623833",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "ferry",
+  "name": "쿠아 제티 (Kuah Jetty)",
+  "lat": 6.30579,
+  "lon": 99.84918,
+  "desc": "12/17 꼬리페행 페리 출발. 웨스틴에서 차로 약 5분. 출국심사 있으니 1시간 30분 전 도착",
+  "review_url": "https://blog.naver.com/jellynezip/224441225963",
+  "review_title": "네이버 블로그 후기 (꼬리페 페리)"
+ },
+ {
+  "cat": "see",
+  "name": "이글 스퀘어 (Eagle Square)",
+  "lat": 6.30842,
+  "lon": 99.85193,
+  "desc": "랑카위 상징 독수리상. 무료, 웨스틴에서 도보 가능. 저녁 산책 추천",
+  "review_url": "https://blog.naver.com/vigor8285/224420946213",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "레젠다 파크 (Lagenda Park)",
+  "lat": 6.31544,
+  "lon": 99.85353,
+  "desc": "이글 스퀘어 옆 무료 해변 공원. 아이들과 산책하기 좋음",
+  "review_url": "https://blog.naver.com/sinw1014/223888971081",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "쿠아 타운 야시장 (Kuah Night Market) · 수·토",
+  "lat": 6.32018,
+  "lon": 99.85135,
+  "desc": "🗓️ 12/16(수) 저녁에 열림! 섬 최대 야시장. 현금 준비 ⭐",
+  "review_url": "https://blog.naver.com/daily_haya/224363224940",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "크다왕 야시장 (Kedawang Night Market) · 화",
+  "lat": 6.32969,
+  "lon": 99.73704,
+  "desc": "🗓️ 12/15(화) 저녁에 열림. 체낭·공항 근처, 작지만 알참",
+  "review_url": "https://blog.naver.com/g_luxury_tour/224340595005",
+  "review_title": "네이버 블로그 (요일별 야시장 정리)"
+ },
+ {
+  "cat": "see",
+  "name": "킬림 지오포레스트 맹그로브 투어 (Kilim Geoforest)",
+  "lat": 6.405,
+  "lon": 99.85843,
+  "desc": "보트로 독수리, 박쥐동굴, 원숭이 구경. 아이 동반이면 프라이빗 보트 추천. 박쥐동굴 입장료 별도 ⭐",
+  "review_url": "https://blog.naver.com/bah0624/224383477050",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "see",
+  "name": "랑카위 와일드라이프 파크 (Wildlife Park)",
+  "lat": 6.38729,
+  "lon": 99.86194,
+  "desc": "동물 먹이 주기 체험. 성인 RM60, 아동 RM40, 먹이 RM9. 대부분 지붕 있음 ⭐",
+  "review_url": "https://blog.naver.com/eunha1310/223794797773",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "아일랜드 호핑 / 다양 분팅 임산부 호수",
+  "lat": 6.20654,
+  "lon": 99.78627,
+  "desc": "호수 수영, 독수리 먹이 주기, 해변 휴식을 묶은 반나절 투어. 호수에서는 구명조끼 필수",
+  "review_url": "https://blog.naver.com/cbchin/224187929309",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "탄중 루 비치 (Tanjung Rhu)",
+  "lat": 6.45853,
+  "lon": 99.82585,
+  "desc": "북쪽의 한적한 고운 모래 해변. 물이 잔잔해 아이 물놀이에 좋음",
+  "review_url": "https://blog.naver.com/paleblue818/224371384844",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "스카이캡 & 오리엔탈 빌리지 (SkyCab)",
+  "lat": 6.37092,
+  "lon": 99.67136,
+  "desc": "케이블카와 스카이브릿지. 3D 미술관 등 아이 시설이 있음. 오전 방문 추천, 웨스틴에서 차로 약 40분",
+  "review_url": "https://blog.naver.com/joonsfamily1/224103528668",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "세븐 웰스 폭포 (Telaga Tujuh)",
+  "lat": 6.38177,
+  "lon": 99.67288,
+  "desc": "위쪽 천연 미끄럼틀이 아이들에게 인기. 계단이 많으니 아쿠아슈즈 준비, 원숭이 조심",
+  "review_url": "https://blog.naver.com/onemonth_1212/224262208425",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "name": "판타이 체낭 비치 (Pantai Cenang)",
+  "lat": 6.29536,
+  "lon": 99.72334,
+  "desc": "일몰, 불쇼, 면세점이 모인 번화가 해변. 언더워터 월드와 묶어서 가기 좋음",
+  "review_url": "https://blog.naver.com/bah0624/224411344859",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "see",
+  "name": "언더워터 월드 (Underwater World)",
+  "lat": 6.28783,
+  "lon": 99.72862,
+  "desc": "터널 수조와 펭귄관. 실내라 비 오는 날 좋음. 대략 10:00~18:00",
+  "review_url": "https://blog.naver.com/bver-/224443095276",
+  "review_title": "네이버 블로그 후기 (아기 동반)"
+ },
+ {
+  "cat": "eat",
+  "name": "원더랜드 푸드 스토어 (Wonderland)",
+  "lat": 6.32465,
+  "lon": 99.84388,
+  "desc": "쿠아 현지인 해산물 맛집, 양이 푸짐함. 17:30~22:30, 저녁에 붐빔 ⭐",
+  "review_url": "https://blog.naver.com/nana9j_/224372881642",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "웡퐁 해산물 (Weng Fung Seafood)",
+  "lat": 6.32248,
+  "lon": 99.85186,
+  "desc": "쿠아의 오래된 중식 해산물집. 라라(조개) 요리, 칠리 크랩. 11:30~15:30, 18:00~22:30",
+  "review_url": "https://www.heritageonaplate.com/blog/things-to-do-langkawi-best-seafood-restaurant-dinner",
+  "review_title": "영문 블로그"
+ },
+ {
+  "cat": "eat",
+  "name": "피시 팜 레스토랑 (Fish Farm Restaurant)",
+  "lat": 6.30637,
+  "lon": 99.86136,
+  "desc": "웨스틴 근처 바닷가 대형 해산물집. 수조에서 직접 고르고 일몰이 예쁨",
+  "review_url": "https://blog.naver.com/jessyjeon/224119984797",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "테오 해산물 (Teo Seafood)",
+  "lat": 6.32581,
+  "lon": 99.84304,
+  "desc": "야외 테이블 중식 해산물집. 새우가 신선하고 가성비 좋음",
+  "review_url": "https://cavinteo.blogspot.com/2019/01/restoran-teo-seafood-restaurant-kuah-langkawi.html",
+  "review_title": "영문 블로그"
+ },
+ {
+  "cat": "eat",
+  "name": "쿠아 타운 시푸드 (Kuah Town Seafood)",
+  "lat": 6.31745,
+  "lon": 99.85058,
+  "desc": "깔끔한 중식 해산물집. 모닝글로리 볶음이 맛있다는 평",
+  "review_url": "https://blog.naver.com/saltely/224165731761",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "완 타이 (Wan Thai)",
+  "lat": 6.32657,
+  "lon": 99.8431,
+  "desc": "똠얌꿍, 코코넛 그린커리. 현금만 받고 주류 없음",
+  "review_url": "https://heartofsheep.wordpress.com/2018/05/22/wan-thai-kuah-langkawi/",
+  "review_title": "영문 블로그"
+ },
+ {
+  "cat": "eat",
+  "name": "아얌 그푹 팍 라든 (Ayam Gepuk Pak Raden)",
+  "lat": 6.32031,
+  "lon": 99.84959,
+  "desc": "말레이 로컬 식당. 치킨, 오징어튀김이 저렴하고 맛있음 (좌표는 도로 기준)",
+  "review_url": "https://blog.naver.com/cometome07/224241099063",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "코비디엠 카페 (Co B Diem)",
+  "lat": 6.32269,
+  "lon": 99.85226,
+  "desc": "쿠아의 브런치 카페. 좌석이 넓어 아이 동반 편함. 오후까지만 영업",
+  "review_url": "https://blog.naver.com/sinw1014/223880067591",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "카키랑 해산물 (Ka Kee Lang)",
+  "lat": 6.32678,
+  "lon": 99.8401,
+  "desc": "광둥식 해산물집, 라임 농어찜 추천 (좌표는 도로 기준)",
+  "review_url": null,
+  "review_title": null
+ },
+ {
+  "cat": "eat",
+  "name": "오키드 리아 (Orkid Ria, 체낭)",
+  "lat": 6.29569,
+  "lon": 99.72374,
+  "desc": "체낭의 유명 해산물집. 타이거 새우, 크랩. 체낭 가는 날 저녁으로 좋음",
+  "review_url": "https://blog.naver.com/apgjdglgl5/223957370754",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "데사 퍼마타 이칸 바카르 (Desa Permata)",
+  "lat": null,
+  "lon": null,
+  "desc": "말레이식 생선구이 노점. 마리당 가격, 이칸 로반 바카르 인기",
+  "review_url": "https://wahdah.my/blog/best-places-to-eat-in-langkawi-breakfast-lunch-and-dinner",
+  "review_title": "영문 블로그 (맛집 리스트)"
+ },
+ {
+  "cat": "eat",
+  "name": "앤 사테 (Ann Satay)",
+  "lat": null,
+  "lon": null,
+  "desc": "현지인 사테 맛집. 숯불 꼬치에 땅콩소스, 아이들도 잘 먹음",
+  "review_url": "https://blog.naver.com/cometome07/224242248134",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "eat",
+  "name": "ZF 해산물 (ZF Seafood, 판타이 텡아)",
+  "lat": null,
+  "lon": null,
+  "desc": "광둥식, 크림 타이거 새우 인기. 이전했다는 말이 있으니 위치 확인 필요",
+  "review_url": null,
+  "review_title": null
+ }
 ]
