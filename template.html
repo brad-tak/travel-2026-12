@@ -18,7 +18,10 @@
   .item { padding: 6px 4px; border-radius: 4px; }
   .item.pinned { cursor: pointer; }
   .item.pinned:hover { background: #f3f3f3; }
-  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .ico { display: inline-block; width: 18px; margin-right: 4px; text-align: center; }
+  .emoji-pin { font-size: 22px; line-height: 30px; text-align: center; background: #fff; border-radius: 50%;
+               box-shadow: 0 1px 4px rgba(0,0,0,.35); border: 2px solid var(--c); }
+  .emoji-pin.hotel { font-size: 26px; line-height: 36px; }
   .desc { color: #666; margin-left: 16px; }
   .links { margin: 3px 0 0 16px; }
   .links a { display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 10px; font-size: 12px; text-decoration: none; }
@@ -27,7 +30,8 @@
   .links a.dir { background: #fff4e5; color: #b45309; }
   .travel { margin: 3px 0 0 16px; color: #333; font-size: 12px; font-weight: 600; }
   .leaflet-popup-content .travel { margin: 6px 0 0; }
-  .legend span { margin-right: 10px; }
+  .legend { font-size: 12px; line-height: 1.8; }
+  .legend span { margin-right: 8px; white-space: nowrap; }
   .nopin { color: #999; font-size: 11px; }
   .leaflet-popup-content .links { margin-left: 0; }
   /* 휴대폰: 지도를 위, 목록을 아래로 */
@@ -40,28 +44,20 @@
 </head>
 <body>
 <div id="side">
-  <h1>🌴 랑카위 · 꼬리페 (12/15~19)</h1>
-  <div class="btns">
-    <button id="b-lgk" class="on">🇲🇾 랑카위</button>
-    <button id="b-lipe">🇹🇭 꼬리페</button>
-  </div>
+  <h1>🌴 랑카위 여행 지도</h1>
   <div class="legend">
-    <span><i class="dot" style="background:#d62728"></i>숙소</span>
-    <span><i class="dot" style="background:#1f77b4"></i>가볼곳</span>
-    <span><i class="dot" style="background:#ff7f0e"></i>식당</span>
-    <span><i class="dot" style="background:#7f7f7f"></i>선착장</span>
+    <span>🏨 숙소</span> <span>🏖️ 해변</span> <span>🎢 액티비티</span> <span>🍽️ 식당</span> <span>☕ 카페</span> <span>🏮 야시장</span>
   </div>
   <div id="list"></div>
 </div>
 <div id="map"></div>
 <script>
-const COLORS = { hotel: "#d62728", see: "#1f77b4", eat: "#ff7f0e", ferry: "#7f7f7f" };
-const CAT_LABEL = { hotel: "🏨 숙소", ferry: "⛴️ 선착장", see: "📍 가볼 만한 곳", eat: "🍽️ 식당" };
+const COLORS = { hotel: "#d62728", see: "#1f77b4", act: "#2ca02c", eat: "#ff7f0e", ferry: "#7f7f7f" };
+const CAT_LABEL = { hotel: "🏨 숙소", ferry: "⛴️ 선착장", see: "📍 가볼 만한 곳", act: "🎢 액티비티", eat: "🍽️ 식당" };
 
 // 좌표: OpenStreetMap 기준. 해변·섬은 대표 지점. 데이터 원본은 data/*.json (build.py로 주입)
 const PLACES = {
   lgk: { view: [[6.19, 99.66], [6.47, 99.91]], items: /*LGK*/ },
-  lipe: { view: [[6.475, 99.215], [6.565, 99.325]], items: /*LIPE*/ },
 };
 
 const map = L.map("map");
@@ -71,10 +67,35 @@ L.tileLayer(ESRI + "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom
 L.tileLayer(ESRI + "World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16 }).addTo(map);
 map.setMaxZoom(16);
 
+// 장소 이름 키워드로 이모지 결정 (p.icon이 있으면 그것을 우선)
+const ICON_RULES = [
+  [/호텔|리조트|Westin/i, "🏨"], [/제티|Jetty|선착장|페리/i, "⛴️"], [/야시장|Night Market/i, "🏮"],
+  [/악어|Crocodile/i, "🐊"], [/아쿠아리움|언더워터|Underwater|수족관/i, "🐠"], [/새|Bird|와일드라이프|Wildlife|동물/i, "🦜"],
+  [/독수리|Eagle/i, "🦅"], [/맹그로브|Mangrove|킬림|Kilim|카약|Kayak/i, "🛶"], [/호핑|Hopping|섬 투어|크루즈|Cruise|요트|보트|Boat/i, "🚤"],
+  [/케이블카|스카이캡|SkyCab|Cable/i, "🚡"], [/폭포|Waterfall|Telaga|Wells/i, "💦"], [/짚라인|Zipline|스카이트렉|Skytrex|로프/i, "🧗"],
+  [/ATV|산악|버기|Buggy/i, "🏍️"], [/승마|Horse/i, "🐎"], [/제트스키|Jet ?Ski|패러세일|Parasail|바나나/i, "🏄"],
+  [/낚시|Fishing/i, "🎣"], [/고카트|Kart/i, "🏎️"], [/논|Padi|Paddy|라만 파디/i, "🌾"], [/무덤|Mahsuri|박물관|Museum|갤러리|Galeria/i, "🏛️"],
+  [/바틱|Batik|공예|Craft/i, "🎨"], [/전망|Viewpoint|Gunung|산/i, "⛰️"], [/해변|비치|Beach|Pantai|Tanjung Rhu/i, "🏖️"],
+  [/공원|Park|광장|Square/i, "🌳"], [/카페|Cafe|Coffee|브런치/i, "☕"], [/사테|Satay/i, "🍢"],
+  [/해산물|Seafood|시푸드|크랩|Crab|이칸|Ikan|피시|Fish/i, "🦐"], [/타이|Thai/i, "🍜"],
+];
+const CAT_ICON = { hotel: "🏨", ferry: "⛴️", see: "📍", act: "🎢", eat: "🍽️" };
+function iconFor(p) {
+  if (p.icon) return p.icon;
+  const rule = ICON_RULES.find(([re]) => re.test(p.name));
+  return rule ? rule[1] : CAT_ICON[p.cat];
+}
+
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const gmapsUrl = (p) => p.lat != null
-  ? `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}`
-  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name.replace(/^.*\(|\).*$/g, "") + (p.region === "lgk" ? " Langkawi" : " Koh Lipe"))}`;
+// 구글맵은 좌표로 열면 핀만 보이고 사진·리뷰가 없음 → 장소 이름으로 검색해 장소 페이지를 연다.
+// 검색어: p.gq(직접 지정) > 이름 괄호 안 영문명 + " Langkawi". 영문명이 없으면 좌표로 대체
+function placeQuery(p) {
+  if (p.gq) return p.gq;
+  const en = (p.name.match(/\(([^)]*[A-Za-z][^)]*)\)/) || [])[1];
+  if (en) return `${en.split(",")[0].trim()}, Langkawi`;
+  return p.lat != null ? `${p.lat},${p.lon}` : `${p.name} Langkawi`;
+}
+const gmapsUrl = (p) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQuery(p))}`;
 const WALK_MAX_MIN = 30;  // 이보다 오래 걸으면 차 이용 권장
 const mins = (s) => Math.max(1, Math.round(s / 60));
 const fmtMin = (m) => m >= 60 ? `${Math.floor(m / 60)}시간${m % 60 ? ` ${m % 60}분` : ""}` : `${m}분`;
@@ -88,18 +109,17 @@ function travelHtml(p) {
   if (!p.routes) return "";
   const { foot, car } = p.routes;
   const parts = [];
-  const approx = foot?.est ? "약 " : "";
   const hideFoot = car && mins(foot?.s ?? 0) > 60;  // 걸어갈 거리가 아니면 차만 표시
-  if (foot && !hideFoot) parts.push(`🚶 도보 ${approx}${fmtMin(mins(foot.s))} (${approx}${fmtKm(foot.m)})` + (car && !walkable(p) ? " · 차 권장" : ""));
+  if (foot && !hideFoot) parts.push(`🚶 도보 ${fmtMin(mins(foot.s))} (${fmtKm(foot.m)})` + (car && !walkable(p) ? " · 차 권장" : ""));
   if (car) parts.push(`🚗 차 ${fmtMin(mins(car.s))}`);
   return parts.length ? `<div class="travel">${parts.join("  ·  ")}</div>` : "";
 }
 
 function dirUrl(p) {
   const hotel = PLACES[p.region].hotel;
-  const dest = gmapsUrl(p).split("query=")[1];  // 좌표 또는 이미 인코딩된 장소 이름
-  const mode = p.region === "lipe" || walkable(p) ? "walking" : "driving";
-  return `https://www.google.com/maps/dir/?api=1&origin=${hotel.lat},${hotel.lon}&destination=${dest}&travelmode=${mode}`;
+  const mode = walkable(p) ? "walking" : "driving";
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(placeQuery(hotel))}` +
+    `&destination=${encodeURIComponent(placeQuery(p))}&travelmode=${mode}`;
 }
 
 const linksHtml = (p) =>
@@ -113,7 +133,10 @@ for (const [key, region] of Object.entries(PLACES)) {
   for (const p of region.items) p.region = key;
   for (const p of region.items) {
     if (p.lat == null) continue;
-    p.marker = L.circleMarker([p.lat, p.lon], { radius: p.cat === "hotel" ? 11 : 8, color: "#fff", weight: 2, fillColor: COLORS[p.cat], fillOpacity: 0.95 })
+    const size = p.cat === "hotel" ? 40 : 34;
+    p.marker = L.marker([p.lat, p.lon], { icon: L.divIcon({ className: "", iconSize: [size, size], iconAnchor: [size / 2, size / 2], popupAnchor: [0, -size / 2],
+        html: `<div class="emoji-pin ${p.cat}" style="--c:${COLORS[p.cat]};width:${size - 4}px;height:${size - 4}px">${iconFor(p)}</div>` }),
+        zIndexOffset: p.cat === "hotel" ? 1000 : 0 })
       .bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}${travelHtml(p)}${linksHtml(p)}`)
       .addTo(map);
   }
@@ -121,17 +144,15 @@ for (const [key, region] of Object.entries(PLACES)) {
 
 function show(key) {
   const region = PLACES[key];
-  document.getElementById("b-lgk").classList.toggle("on", key === "lgk");
-  document.getElementById("b-lipe").classList.toggle("on", key === "lipe");
   map.fitBounds(region.view);
   let html = "";
-  for (const cat of ["hotel", "ferry", "see", "eat"]) {
+  for (const cat of ["hotel", "ferry", "act", "see", "eat"]) {
     const rows = region.items.map((p, i) => [p, i]).filter(([p]) => p.cat === cat);
     if (!rows.length) continue;
     html += `<h2>${CAT_LABEL[cat]} (${rows.length})</h2>`;
     for (const [p, i] of rows) {
       const pinned = p.lat != null;
-      html += `<div class="item${pinned ? " pinned" : ""}" data-i="${i}"><i class="dot" style="background:${COLORS[cat]}"></i><b>${esc(p.name)}</b>` +
+      html += `<div class="item${pinned ? " pinned" : ""}" data-i="${i}"><span class="ico">${iconFor(p)}</span><b>${esc(p.name)}</b>` +
         (pinned ? "" : ` <span class="nopin">(지도 위치 미확인)</span>`) +
         `<div class="desc">${esc(p.desc)}</div>${travelHtml(p)}${linksHtml(p)}</div>`;
     }
@@ -146,8 +167,6 @@ function show(key) {
   }));
 }
 
-document.getElementById("b-lgk").onclick = () => show("lgk");
-document.getElementById("b-lipe").onclick = () => show("lipe");
 show("lgk");
 </script>
 </body>
