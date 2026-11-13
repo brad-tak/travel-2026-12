@@ -60,7 +60,7 @@
   "gq": "Pasar Malam Kedawang Langkawi"
  },
  {
-  "cat": "see",
+  "cat": "act",
   "name": "킬림 지오포레스트 맹그로브 투어 (Kilim Geoforest)",
   "lat": 6.405,
   "lon": 99.85843,
@@ -70,17 +70,17 @@
   "gq": "Kilim Karst Geoforest Park Langkawi"
  },
  {
-  "cat": "see",
+  "cat": "act",
   "name": "랑카위 와일드라이프 파크 (Wildlife Park)",
   "lat": 6.38729,
   "lon": 99.86194,
-  "desc": "동물 먹이 주기 체험. 성인 RM60, 아동 RM40, 먹이 RM9. 대부분 지붕 있음 ⭐",
-  "review_url": "https://blog.naver.com/eunha1310/223794797773",
-  "review_title": "네이버 블로그 후기",
+  "desc": "동물 먹이 주기 체험, 대부분 지붕 있음. 약 08:30–18:00, 외국인 성인 RM60/아동(2–12) RM42 ⭐",
+  "review_url": "https://blog.naver.com/alswl8966/224181111458",
+  "review_title": "네이버 블로그 후기 (아이 동반, 2026)",
   "gq": "Langkawi Wildlife Park"
  },
  {
-  "cat": "see",
+  "cat": "act",
   "name": "아일랜드 호핑 / 다양 분팅 임산부 호수",
   "lat": 6.20654,
   "lon": 99.78627,
@@ -101,7 +101,7 @@
   "gq": "Tanjung Rhu Beach Langkawi"
  },
  {
-  "cat": "see",
+  "cat": "act",
   "name": "스카이캡 & 오리엔탈 빌리지 (SkyCab)",
   "lat": 6.37092,
   "lon": 99.67136,
@@ -131,11 +131,11 @@
   "gq": "Pantai Cenang Beach Langkawi"
  },
  {
-  "cat": "see",
+  "cat": "act",
   "name": "언더워터 월드 (Underwater World)",
   "lat": 6.28783,
   "lon": 99.72862,
-  "desc": "터널 수조와 펭귄관. 실내라 비 오는 날 좋음. 대략 10:00~18:00",
+  "desc": "터널 수조·펭귄관, 실내라 비 오는 날 좋음. 매일 10:00–18:00, 외국인 성인 RM59.50/아동(3–12) RM47.50",
   "review_url": "https://blog.naver.com/bver-/224443095276",
   "review_title": "네이버 블로그 후기 (아기 동반)",
   "gq": "Underwater World Langkawi"
@@ -269,5 +269,259 @@
   "review_url": null,
   "review_title": null,
   "gq": "ZF Seafood Restaurant Langkawi"
+ },
+ {
+  "cat": "act",
+  "icon": "🐊",
+  "name": "크로커다일 어드벤처랜드 악어농장 (Crocodile Adventureland)",
+  "gq": "Crocodile Adventureland Langkawi",
+  "lat": 6.4021034,
+  "lon": 99.7123708,
+  "desc": "악어 먹이 주기·쇼·가이드 투어, 1~2시간. 입장+먹이 성인 RM59/아동 RM49, 악어 사진 포함 RM90/RM75(2024 후기), 온라인 콤보 RM45/36. 평일 10:00–17:00, 주말 09:00–17:00(공식은 매일 9:30–17:00). 다타이 쪽이라 귀가 그랩을 미리 확보 ⭐",
+  "review_url": "https://blog.naver.com/dailydada-/223388769795",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "act",
+  "icon": "🗼",
+  "name": "마하 타워 (MAHA Tower)",
+  "gq": "MAHA Tower Langkawi",
+  "lat": 6.3201286,
+  "lon": 99.8458551,
+  "desc": "쿠아 전망 타워, 전 연령. 외국인 성인 RM78/아동 RM46, 선셋 RM90/RM54. 화–일 12:00–20:00, 월요일 휴무. 시간 지정 예약",
+  "review_url": "https://blog.naver.com/sinw1014/223883507492",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "act",
+  "icon": "🌌",
+  "name": "드림 포레스트 (Dream Forest)",
+  "gq": "Dream Forest Langkawi",
+  "lat": 6.3652381,
+  "lon": 99.7913174,
+  "desc": "약 1.2km 숲길 야간 조명 산책로, 5세도 가능, 1.5~2시간. 현장 성인 RM98/아동 RM68(온라인 약 RM84/64.5). 저녁~24:00, 수요일 휴무. 시간 예약 ⭐",
+  "review_url": "https://blog.naver.com/bah0624/224392926112",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "act",
+  "icon": "🧗",
+  "name": "스카이트렉스 어드벤처 (SKYTREX Adventure)",
+  "gq": "SkyTrex Adventure Langkawi",
+  "lat": 6.3703418,
+  "lon": 99.6814079,
+  "desc": "나무 위 짚라인·장애물 코스. Little Legend 키 110cm+(RM79), Island Extreme 140cm·12세+(RM99). 12세 쌍둥이 적합, 5세는 키 미달 가능성. 09:00–15:00 출발, 온라인 예약 필수, 운동화",
+  "review_url": "https://blog.naver.com/3rdlife70/223841262384",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "act",
+  "icon": "🧗",
+  "name": "움가와 짚라인 (Umgawa Zipline)",
+  "gq": "Umgawa Zipline Eco Adventures Langkawi",
+  "lat": null,
+  "lon": null,
+  "desc": "세븐 웰스 근처 열대우림 짚라인, 약 5세·100cm 이상(확인 필요). Jungle Flight RM239(조기 RM199~219). 가족 4인 시 둘째 아이 무료 프로모션. 08:30–16:30, 예약 필수",
+  "review_url": "https://www.emily2u.com/umgawa-zipline-eco-adventures-langkawi/",
+  "review_title": "영문 블로그"
+ },
+ {
+  "cat": "act",
+  "icon": "🏍️",
+  "name": "어드벤처 & 익스트림 파크 (Langkawi Adventure & X-treme Park)",
+  "gq": "Langkawi Adventure & Extreme Park Kilim",
+  "lat": null,
+  "lon": null,
+  "desc": "ATV(12세+), 고카트, 스카이바이크(140cm+), 양궁, 말 먹이 주기, 7D 영화. 5세는 일부만. 4in1 약 SGD31. 10:00–19:00, 일부 시설 월요일 휴무. 킬림 근처",
+  "review_url": "https://blog.naver.com/onemonth_1212/224262208425",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "act",
+  "icon": "🏎️",
+  "name": "모락 고카트 (MORAC Go-Kart)",
+  "gq": "MORAC Adventure Park Langkawi",
+  "lat": 6.3169665,
+  "lon": 99.7240239,
+  "desc": "공항 옆 서킷. 단독 운전 12세+·150cm+, 5세 불가. 1회 RM85, 2인승 RM150. 15:00–23:00",
+  "review_url": null,
+  "review_title": null
+ },
+ {
+  "cat": "act",
+  "icon": "🚤",
+  "name": "제트스키 섬 투어 (Jet Ski Island Tour, 체낭)",
+  "gq": "Mega Water Sports Langkawi",
+  "lat": 6.2955936,
+  "lon": 99.7228039,
+  "desc": "체낭 출발 제트스키 섬 투어. 운전 16세+, 아이는 동승. 대당 1인 RM700/2인 RM800, 다양 분팅 코스 RM1,000~1,200. 오전 출발 추천, 예약",
+  "review_url": "https://blog.naver.com/lily019ly/223554859585",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "act",
+  "icon": "🪂",
+  "name": "패러세일링·바나나보트 (Parasailing & Banana Boat, 체낭)",
+  "gq": "Pantai Cenang Parasailing Langkawi",
+  "lat": 6.2958,
+  "lon": 99.7231,
+  "desc": "체낭 해변 현장 업체. 패러세일링 7세+(12세 가능, 5세 불가), 바나나보트 5세+. 흥정 시 1인 약 RM100, 20~30분",
+  "review_url": "https://blog.naver.com/frigg6/223769103096",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "act",
+  "icon": "🛶",
+  "name": "맹그로브 카약 투어 (Mangrove Kayaking, Kilim)",
+  "gq": "Kilim Jetty Langkawi",
+  "lat": 6.405027,
+  "lon": 99.8582091,
+  "desc": "가이드 동반 킬림 맹그로브 카약, 구명조끼 제공. 12세는 직접, 5세는 부모와 2인승. 성인 RM263.5/아동 RM205. 주간·일몰 타임, 예약",
+  "review_url": null,
+  "review_title": null
+ },
+ {
+  "cat": "act",
+  "icon": "🛥️",
+  "name": "선셋 디너 크루즈 (Sunset Dinner Cruise, 요트클럽)",
+  "gq": "Royal Langkawi Yacht Club",
+  "lat": 6.3030583,
+  "lon": 99.8514481,
+  "desc": "웨스틴 근처 요트클럽 출발, 뷔페·음료·바다 수영. 이코노미 약 RM108, 프리미엄 성인 RM237.5/아동 RM188. 15:30 체크인, 16:00–20:00. 5세는 계속 지켜보기 ⭐",
+  "review_url": "https://blog.naver.com/solsolsolsolsol4/224333346592",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "act",
+  "icon": "🤿",
+  "name": "파야섬 해양공원 스노클링 (Pulau Payar Marine Park)",
+  "gq": "Pulau Payar Marine Park",
+  "lat": 6.0625515,
+  "lon": 100.0400788,
+  "desc": "쿠아 출발 배로 1시간+ 스노클링 데이투어. 6~65세라 5세 불가. 성인 RM310/아동 RM255. 뱃멀미·기상 취소 가능, 예약",
+  "review_url": "https://blog.naver.com/martie9/224102934945",
+  "review_title": "네이버 블로그 후기",
+  "transport": "🚤 쿠아 제티에서 투어 보트로 1시간+ (호텔 픽업 포함 투어 많음)"
+ },
+ {
+  "cat": "act",
+  "icon": "🐎",
+  "name": "아일랜드 호시스 승마 (Island Horses)",
+  "gq": "Island Horses Langkawi",
+  "lat": 6.3758612,
+  "lon": 99.6730642,
+  "desc": "정글·해변 승마, 4세+, 초보는 리드줄. 체중 90kg 이하. 30분 RM60, 해변 1시간 RM150(연도 미상). 화–일 08:30–12:30, 14:00–17:30. 운영 여부 확인 필요",
+  "review_url": null,
+  "review_title": null
+ },
+ {
+  "cat": "act",
+  "icon": "🎨",
+  "name": "랑카위 크래프트 컴플렉스·바틱 체험 (Langkawi Craft Complex)",
+  "gq": "Langkawi Craft Complex",
+  "lat": 6.4207542,
+  "lon": 99.7803465,
+  "desc": "정부 운영 공예 센터, 유료 바틱 채색 체험(5세 가능). 입장 무료. 검은모래해변·탄중 루와 동선 묶기 좋음",
+  "review_url": "https://blog.naver.com/solsolsolsolsol4/224329857983",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "act",
+  "icon": "🎨",
+  "name": "아트마 알람 바틱 아트 빌리지 (Atma Alam Batik Art Village)",
+  "gq": "Atma Alam Batik Art Village Langkawi",
+  "lat": null,
+  "lon": null,
+  "desc": "밑그림 천에 색칠하는 바틱 페인팅, 5세도 쉬움. 체험 약 RM30(과거). 09:00–20:00, 화요일 휴무. 최근 운영 정보 없어 확인 필요",
+  "review_url": null,
+  "review_title": null
+ },
+ {
+  "cat": "see",
+  "icon": "🏛️",
+  "name": "마수리 무덤·코타 마수리 (Kota Mahsuri)",
+  "gq": "Kota Mahsuri Langkawi",
+  "lat": 6.3388131,
+  "lon": 99.7841479,
+  "desc": "랑카위 전설 마수리 유적. 전통가옥, 두레박 체험, 작은 동물원, 공연. 외국인 성인 RM20/아동 RM10. 09:00–18:00",
+  "review_url": "https://blog.naver.com/hepyhae/222990700468",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "see",
+  "icon": "🌾",
+  "name": "라만 파디 쌀 박물관 (Laman Padi)",
+  "gq": "Laman Padi Langkawi",
+  "lat": 6.2985829,
+  "lon": 99.7223875,
+  "desc": "체낭의 논·쌀 문화 전시장, 무료, 모내기 체험 약 RM5. 09:00–17:00(금요일 휴무 정보도). 관리 아쉽다는 후기",
+  "review_url": "https://foreverbreak.com/travel/malaysia/langkawi/laman-padi/",
+  "review_title": "영문 가이드"
+ },
+ {
+  "cat": "see",
+  "icon": "💦",
+  "name": "두리안 페랑긴 폭포 (Durian Perangin Waterfall)",
+  "gq": "Durian Perangin Waterfall Langkawi",
+  "lat": 6.4016085,
+  "lon": 99.8209626,
+  "desc": "쿠아에서 가까운 계단식 폭포, 얕은 물놀이. 입장 RM2. 12월 건기엔 수량 적을 수 있음",
+  "review_url": "https://blog.naver.com/jjopapam/223732753924",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "see",
+  "icon": "💦",
+  "name": "테무룬 폭포 (Temurun Waterfall)",
+  "gq": "Temurun Waterfall Langkawi",
+  "lat": 6.4318521,
+  "lon": 99.706787,
+  "desc": "다타이 쪽 3단 폭포, 무료, 주차장에서 짧게 걷기. 바위 미끄러움, 5세 손잡기. 건기엔 약할 수 있음",
+  "review_url": "https://blog.naver.com/gooridek/224341589640",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "icon": "⛰️",
+  "name": "구눙 라야 전망대 (Gunung Raya)",
+  "gq": "Gunung Raya Langkawi",
+  "lat": 6.3688195,
+  "lon": 99.8183124,
+  "desc": "최고봉 881m, 산길을 차로 올라 섬 전경. 도로 무료. 꼬불길이라 멀미 대비",
+  "review_url": "https://blog.naver.com/krzbsw29/224400253743",
+  "review_title": "네이버 블로그 후기"
+ },
+ {
+  "cat": "see",
+  "icon": "🏖️",
+  "name": "검은모래해변 (Black Sand Beach)",
+  "gq": "Black Sand Beach Langkawi",
+  "lat": 6.4234213,
+  "lon": 99.7888563,
+  "desc": "마수리 전설의 검은 모래 해변, 무료, 15~30분 정차 코스. 크래프트 컴플렉스 바로 옆",
+  "review_url": "https://blog.naver.com/kyklyj/221604024157",
+  "review_title": "네이버 블로그 후기 (2019)"
+ },
+ {
+  "cat": "see",
+  "icon": "🏖️",
+  "name": "파시르 텡코락 해변 (Pantai Pasir Tengkorak)",
+  "gq": "Pantai Pasir Tengkorak",
+  "lat": 6.4307372,
+  "lon": 99.7258225,
+  "desc": "북서쪽 숲속 해변, 물 맑고 잔잔해 5세 물놀이 좋음. 편의시설 적음. 악어 농장·테무룬 폭포와 묶기 좋음",
+  "review_url": "https://blog.naver.com/jjopapam/223718730597",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
+ },
+ {
+  "cat": "eat",
+  "icon": "🍧",
+  "name": "치빗 치바 빙수 카페 (Cheevit Cheeva, Kuah)",
+  "gq": "Cheevit Cheeva Langkawi Kuah",
+  "lat": null,
+  "lon": null,
+  "desc": "쿠아 다양 워크의 냉방 잘 되는 빙수 카페, 빙수 RM29~36. 12:00–23:00. 웨스틴에서 가까움",
+  "review_url": "https://blog.naver.com/solsolsolsolsol4/224333346592",
+  "review_title": "네이버 블로그 후기 (아이 동반)"
  }
 ]
