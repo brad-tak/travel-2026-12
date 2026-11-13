@@ -65,9 +65,12 @@ const PLACES = {
 const map = L.map("map");
 // OSM 공식 타일은 file://에서 403, CARTO는 API 키 요구 → 키 없이 되는 Esri 평면(음영 없는) 지도 + 영문 라벨
 const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
+// 평면 지도는 16단계까지만 있음 → 17단계부터는 Esri 거리 지도로 전환.
+// 이 지역 거리 지도 데이터는 17단계까지라 18~19단계는 17단계 이미지를 확대해서 보여줌(핀 간격이 넓어짐)
 L.tileLayer(ESRI + "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, attribution: "Tiles © Esri" }).addTo(map);
 L.tileLayer(ESRI + "World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16 }).addTo(map);
-map.setMaxZoom(16);
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", { minZoom: 17, maxNativeZoom: 17, maxZoom: 19 }).addTo(map);
+map.setMaxZoom(19);
 
 // 장소 이름 키워드로 이모지 결정 (p.icon이 있으면 그것을 우선)
 const ICON_RULES = [
@@ -167,7 +170,7 @@ function show(key) {
   list.querySelectorAll(".item.pinned").forEach((el) => el.addEventListener("click", (e) => {
     if (e.target.closest("a")) return;  // 링크 클릭은 그대로 열기
     const p = region.items[+el.dataset.i];
-    map.setView(p.marker.getLatLng(), 16);
+    map.setView(p.marker.getLatLng(), 18);
     p.marker.openPopup();
   }));
 }
