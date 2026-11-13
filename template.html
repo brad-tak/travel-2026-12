@@ -48,6 +48,8 @@
   <div class="legend">
     <span>🏨 숙소</span> <span>🏖️ 해변</span> <span>🎢 액티비티</span> <span>🍽️ 식당</span> <span>☕ 카페</span> <span>🏮 야시장</span>
   </div>
+  <div class="btns"><button id="b-walk">🚶 도보 15분 이내만 보기</button></div>
+  <div id="walk-note" class="nopin" style="display:none">웨스틴 주변 길은 밤에 어둡다는 후기가 있어요. 해가 진 뒤에는 그랩을 권장합니다.</div>
   <div id="list"></div>
 </div>
 <div id="map"></div>
@@ -97,10 +99,13 @@ function placeQuery(p) {
 }
 const gmapsUrl = (p) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQuery(p))}`;
 const WALK_MAX_MIN = 30;  // 이보다 오래 걸으면 차 이용 권장
+const WALK_SHORT_MIN = 15;  // "걸어서 갈 수 있는 곳" 기준
+let walkOnly = false;
 const mins = (s) => Math.max(1, Math.round(s / 60));
 const fmtMin = (m) => m >= 60 ? `${Math.floor(m / 60)}시간${m % 60 ? ` ${m % 60}분` : ""}` : `${m}분`;
 const fmtKm = (m) => m < 1000 ? `${m}m` : `${(m / 1000).toFixed(1)}km`;
 const walkable = (p) => p.routes?.foot && mins(p.routes.foot.s) <= WALK_MAX_MIN;
+const nearWalk = (p) => p.transport === "🏨 웨스틴 호텔 안" || (p.routes?.foot && mins(p.routes.foot.s) <= WALK_SHORT_MIN);
 
 // 숙소 → 장소 이동 시간 (build.py가 OSM 경로로 미리 계산)
 function travelHtml(p) {
@@ -110,7 +115,7 @@ function travelHtml(p) {
   const { foot, car } = p.routes;
   const parts = [];
   const hideFoot = car && mins(foot?.s ?? 0) > 60;  // 걸어갈 거리가 아니면 차만 표시
-  if (foot && !hideFoot) parts.push(`🚶 도보 ${fmtMin(mins(foot.s))} (${fmtKm(foot.m)})` + (car && !walkable(p) ? " · 차 권장" : ""));
+  if (foot && !hideFoot) parts.push(`${nearWalk(p) ? "✅ " : ""}🚶 도보 ${fmtMin(mins(foot.s))} (${fmtKm(foot.m)})` + (car && !walkable(p) ? " · 차 권장" : ""));
   if (car) parts.push(`🚗 차 ${fmtMin(mins(car.s))}`);
   return parts.length ? `<div class="travel">${parts.join("  ·  ")}</div>` : "";
 }
@@ -147,7 +152,7 @@ function show(key) {
   map.fitBounds(region.view);
   let html = "";
   for (const cat of ["hotel", "ferry", "act", "see", "eat"]) {
-    const rows = region.items.map((p, i) => [p, i]).filter(([p]) => p.cat === cat);
+    const rows = region.items.map((p, i) => [p, i]).filter(([p]) => p.cat === cat && (!walkOnly || cat === "hotel" || nearWalk(p)));
     if (!rows.length) continue;
     html += `<h2>${CAT_LABEL[cat]} (${rows.length})</h2>`;
     for (const [p, i] of rows) {
@@ -167,6 +172,18 @@ function show(key) {
   }));
 }
 
+document.getElementById("b-walk").onclick = (e) => {
+  walkOnly = !walkOnly;
+  e.target.classList.toggle("on", walkOnly);
+  document.getElementById("walk-note").style.display = walkOnly ? "block" : "none";
+  for (const p of PLACES.lgk.items) {
+    if (!p.marker) continue;
+    const visible = !walkOnly || p.cat === "hotel" || nearWalk(p);
+    visible ? p.marker.addTo(map) : p.marker.remove();
+  }
+  show("lgk");
+  if (walkOnly) map.setView([PLACES.lgk.hotel.lat, PLACES.lgk.hotel.lon], 15);
+};
 show("lgk");
 </script>
 </body>
